@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { DataService } from '../data/data.service';
 import { UserSettings } from '../data/user-settings';
@@ -18,7 +19,12 @@ export class UserSettingsFormComponent implements OnInit {
     notes: ""
   };
 
-  startDate: Date = new Date();
+  startDate: NgbDateStruct = { year: 1789, month: 7, day: 14 };
+  time = { hour: 13, minute: 30 };
+  meridian = true;
+  selected = 0;
+  hovered = 0;
+  readonly = false;
 
   // Spread syntax for simple copy
   // If you wanted a deep copy you would use some kind of utility
@@ -61,6 +67,10 @@ export class UserSettingsFormComponent implements OnInit {
       this.postError = true;
       this.postErrorMessage = "Please fix the above errors."
     }
+  }
+
+  toggleMeridian() {
+    this.meridian = !this.meridian;
   }
 
 }
