@@ -1,7 +1,7 @@
 <div class="container">
     <h2>User Settings</h2>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <div class="mb-3">
+        <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name" required
                    #nameField="ngModel" (blur)="onBlur(nameField)"
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="form-check mb-3">
+        <div class="form-check form-group">
             <input class="form-check-input" type="checkbox" value="" id="emailOffers" name="emailOffers"
                    [(ngModel)]="userSettings.emailOffers">
             <label class="form-check-label" for="emailOffers">
@@ -20,7 +20,7 @@
         </div>
 
         <p>User Interface Style</p>
-        <div class="mb-3">
+        <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" value="light"
                        checked [(ngModel)]="userSettings.interfaceStyle">
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="mb-3">
+        <div class="form-group">
             <label for="subscriptionType">Subscription Type</label>
             <select class="form-control" id="subscriptionType" name="subscriptionType"
                     [(ngModel)]="userSettings.subscriptionType">
@@ -52,7 +52,7 @@
             </select>
         </div>
 
-        <div class="mb-3">
+        <div class="form-group">
             <label for="notes">Notes</label>
             <textarea id="notes" name="notes" class="form-control" rows="3" [(ngModel)]="userSettings.notes"></textarea>
         </div>
