@@ -18,6 +18,8 @@ export class UserSettingsFormComponent implements OnInit {
     notes: ""
   };
 
+  startDate: Date = new Date();
+
   // Spread syntax for simple copy
   // If you wanted a deep copy you would use some kind of utility
   userSettings: UserSettings = { ...this.originalUserSettings };
